@@ -504,7 +504,8 @@ class AlpacaStore(with_metaclass(MetaSingleton, object)):
             """
             only interested in samples between 9:30, 16:00 NY time
             """
-            return df.between_time("09:30", "16:00")
+            return df
+            # return df.between_time("09:30", "16:00")
 
         if granularity == 'day':
             cdl = self.oapi.polygon.historic_agg_v2(
